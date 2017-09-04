@@ -18,4 +18,3 @@ RUN unzip /root/srs.zip \
 EXPOSE 1935
 
 WORKDIR /root
-CMD cd /root/srs/trunk && ./objs/srs -c conf/srs.conf
