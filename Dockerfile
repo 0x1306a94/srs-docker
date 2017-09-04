@@ -13,10 +13,9 @@ RUN git clone --progress https://github.com/ossrs/srs.git --verbose \
     && cd /root/srs/trunk \
     && git checkout 3.0release \
     && ./configure --disable-all --with-ssl --with-nginx --with-hls --with-http-callback --with-http-server --with-http-api --with-ffmpeg --with-transcode --with-librtmp --with-dvr \
-    && make -j16 \
-    && export SRSPATH="/root/srs/trunk" \
-    && echo $SRSPATH
+    && make -j16
 
 EXPOSE 1935
 
-CMD cd $SRSPATH && ./objs/srs -c conf/srs.conf
+WORKDIR /root
+CMD cd /root/srs/trunk && ./objs/srs -c conf/srs.conf
