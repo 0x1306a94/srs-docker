@@ -9,7 +9,7 @@ RUN apt-get update \
     && apt-get install -y --force-yes --no-install-recommends automake autoconf libtool build-essential wget ca-certificates unzip libpcre3-dev zlib1g-dev
 
 WORKDIR /root
-RUN git clone https://github.com/ossrs/srs.git --progress --verbose \
+RUN git --progress clone https://github.com/ossrs/srs.git --verbose \
     && cd /root/srs/trunk \
     && git checkout 3.0release \
     && ./configure --disable-all --with-ssl --with-nginx --with-hls --with-http-callback --with-http-server --with-http-api --with-ffmpeg --with-transcode --with-librtmp --with-dvr \
