@@ -2,7 +2,6 @@ FROM ubuntu:14.04
 MAINTAINER king <king129@vip.163.com>
 
 WORKDIR /root
-ADD ./srs /root/srs
 
 RUN apt-get update \
     && apt-get install -y git python2.7 && python2.7 --version \
