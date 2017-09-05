@@ -11,6 +11,7 @@ RUN apt-get update \
 
 WORKDIR /root
 RUN unzip /root/srs.zip \
+    && rm /root/srs.zip \
     && cd /root/srs/trunk \
     && ./configure --disable-all --with-ssl --with-nginx --with-hls --with-http-callback --with-http-server --with-http-api --with-ffmpeg --with-transcode --with-librtmp --with-dvr \
     && make
