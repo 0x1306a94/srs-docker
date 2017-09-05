@@ -15,6 +15,4 @@ RUN unzip /root/srs.zip \
     && ./configure --disable-all --with-ssl --with-nginx --with-hls --with-http-callback --with-http-server --with-http-api --with-ffmpeg --with-transcode --with-librtmp --with-dvr \
     && make
 
-EXPOSE 1935
-
 WORKDIR /root
